@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "275894078865",
+    "project_id": "erikslustonlineshop",
+    "storage_bucket": "erikslustonlineshop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275894078865:android:4e400ebd58bfd7c6f2de30",
+        "android_client_info": {
+          "package_name": "com.example.erikslustonlineshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275894078865-f49lvg0ce6fnme1g1ke30q685f9u4rr2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGmpT1Af9kPVmZ52FjAojur0T97i1RbBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275894078865-f49lvg0ce6fnme1g1ke30q685f9u4rr2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
