@@ -52,7 +52,6 @@ class LoginActivity : BaseActivity(), View.OnClickListener{
                     val intent = Intent(this@LoginActivity, AddProductActivity::class.java)
                     startActivity(intent)
 
-
                 }
                 R.id.tv_register -> {
                     //launch register screen
