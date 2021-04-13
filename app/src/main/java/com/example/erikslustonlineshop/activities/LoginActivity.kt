@@ -16,8 +16,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : BaseActivity(), View.OnClickListener{
 
-    private lateinit var auth:FirebaseAuth
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -32,9 +30,9 @@ class LoginActivity : BaseActivity(), View.OnClickListener{
             )
         }
 
-        findViewById<TextView>(R.id.tv_forgotPassword).setOnClickListener { this }
-        findViewById<Button>(R.id.btn_login).setOnClickListener { this }
-        findViewById<TextView>(R.id.tv_register).setOnClickListener { this }
+        findViewById<TextView>(R.id.tv_forgotPassword).setOnClickListener (this)
+        findViewById<Button>(R.id.btn_login).setOnClickListener (this)
+        findViewById<TextView>(R.id.tv_register).setOnClickListener (this)
     }
 
     override fun onClick(view: View?) {
@@ -96,11 +94,11 @@ class LoginActivity : BaseActivity(), View.OnClickListener{
         val password = et_password_login.text.toString().trim { it <= ' ' }
 
         if(validateLoginDetails()){
-            auth.signInWithEmailAndPassword(email, password)
+
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if(task.isSuccessful){
                         Log.d("firebaseSignin", "signin success")
-                        val user = auth.currentUser
                     }else{
                         Log.d("firebaseSignin", task.exception.toString())
                         showErrorSnackBar("Login Failed: task.exception.toString()", true)

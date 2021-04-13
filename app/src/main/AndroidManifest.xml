@@ -10,6 +10,12 @@
         android:theme="@style/Theme.ErikslustOnlineShop">
         <activity android:name=".activities.ForgotPasswordActivity"></activity>
         <activity android:name=".activities.BaseActivity" />
+
+        <activity
+            android:name=".activities.AddProductActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ErikslustOnlineShop.NoActionBar" />
+
         <activity
             android:name=".activities.RegisterActivity"
             android:screenOrientation="portrait"
