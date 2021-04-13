@@ -49,6 +49,9 @@ class LoginActivity : BaseActivity(), View.OnClickListener{
                 R.id.btn_login -> {
                     //login via firebase
                     logInRegisteredUser()
+                    val intent = Intent(this@LoginActivity, AddProductActivity::class.java)
+                    startActivity(intent)
+
 
                 }
                 R.id.tv_register -> {
