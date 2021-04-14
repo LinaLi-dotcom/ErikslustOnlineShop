@@ -15,6 +15,10 @@ import java.util.*
 
 class AddProductActivity : AppCompatActivity() {
 
+    val REQUEST_IMAGE_CAPTURE = 1
+
+    val REQUEST_GALLERY = 2
+
     private lateinit var binding: ActivityAddProductBinding
 
     var selectedBitmap : Bitmap? = null
@@ -29,6 +33,10 @@ class AddProductActivity : AppCompatActivity() {
         binding = ActivityAddProductBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        binding.ivAddUpdateProduct.setOnClickListener {
+
+        }
 
         binding.flProductImage.setOnClickListener {
 
