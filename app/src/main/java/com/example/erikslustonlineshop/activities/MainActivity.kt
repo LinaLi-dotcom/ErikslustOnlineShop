@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.erikslustonlineshop.R
 import com.google.firebase.auth.FirebaseAuth
-import io.sentry.Sentry
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

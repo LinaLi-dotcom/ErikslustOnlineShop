@@ -8,14 +8,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ErikslustOnlineShop">
-        <activity android:name=".activities.ForgotPasswordActivity"></activity>
+        <activity android:name=".activities.ShowAllProductsActivity"></activity>
+        <activity android:name=".activities.ForgotPasswordActivity" />
         <activity android:name=".activities.BaseActivity" />
-
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".activities.AddProductActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ErikslustOnlineShop.NoActionBar" />
-
         <activity
             android:name=".activities.RegisterActivity"
             android:screenOrientation="portrait"
@@ -25,7 +24,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ErikslustOnlineShop.NoActionBar" />
         <activity
-            android:name=".activities.AddProductActivity"
+            android:name=".activities.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ErikslustOnlineShop.NoActionBar">
             <intent-filter>
@@ -38,9 +37,9 @@
             android:name=".activities.MainActivity"
             android:screenOrientation="portrait" />
 
-        <meta-data android:name="io.sentry.dsn" android:value="https://007c5c8b41d0485ca0168bfaf2dbbb67@o557923.ingest.sentry.io/5690786" />
-
+        <meta-data
+            android:name="io.sentry.dsn"
+            android:value="https://007c5c8b41d0485ca0168bfaf2dbbb67@o557923.ingest.sentry.io/5690786" />
     </application>
-
 
 </manifest>
