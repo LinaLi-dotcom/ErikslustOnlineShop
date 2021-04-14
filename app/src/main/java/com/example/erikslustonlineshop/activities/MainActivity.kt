@@ -13,8 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Sentry.captureMessage("testing SDK setup")
-
         val userId = intent.getStringExtra("user_id")
         val emailId = intent.getStringExtra("email_id")
 

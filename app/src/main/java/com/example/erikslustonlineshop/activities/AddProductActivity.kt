@@ -1,9 +1,14 @@
 package com.example.erikslustonlineshop.activities
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
+import android.view.View
+import android.widget.ImageView
 import com.example.erikslustonlineshop.databinding.ActivityAddProductBinding
 import com.example.erikslustonlineshop.models.Products
 import com.google.firebase.auth.ktx.auth
@@ -35,10 +40,22 @@ class AddProductActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.ivAddUpdateProduct.setOnClickListener {
+            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            try {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+            } catch (e: ActivityNotFoundException) {
+                // display error state to the user
+            }
+
+        }
+        binding.ivAddUpdateProductGallery.setOnClickListener {
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent, REQUEST_GALLERY)
 
         }
 
-        binding.flProductImage.setOnClickListener {
+        binding.btnSubmit.setOnClickListener {
 
            if(selectedBitmap != null) {
                val baos = ByteArrayOutputStream()
@@ -63,10 +80,6 @@ class AddProductActivity : AppCompatActivity() {
 
         }
 
-        binding.btnSubmit.setOnClickListener {
-
-        }
-
     }
 
     fun saveToDatabase(){
@@ -79,5 +92,26 @@ class AddProductActivity : AppCompatActivity() {
 
         productRef.setValue(newProduct)
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        val theImage = binding.IVProduct
+
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == AppCompatActivity.RESULT_OK) {
+            selectedBitmap = data!!.extras!!.get("data") as Bitmap
+            theImage.setImageBitmap(selectedBitmap)
+            theImage.visibility = View.VISIBLE
+
+
+        }
+
+        if (requestCode == REQUEST_GALLERY && resultCode == AppCompatActivity.RESULT_OK){
+            theImage.setImageURI(data?.data)
+            theImage.visibility = View.VISIBLE
+
+
+        }
     }
 }

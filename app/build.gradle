@@ -59,5 +59,4 @@ dependencies {
     implementation 'com.google.firebase:firebase-database-ktx'
     implementation 'com.google.android.material:material:1.2.1'
 
-    implementation 'io.sentry:sentry-android:4.3.0'
 }
